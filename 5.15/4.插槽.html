@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<cc>
+				<template v-slot:header>头部</template>
+				<main></main>
+				<template v-slot:footer>底部</template>
+			</cc>
+			
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			Vue.component("cc",{
+				template:"<div class='container'>\
+							<header>\
+								<slot name='header'></slot>\
+							</header>\
+							<main>\
+								<slot></slot>\
+							</main>\
+							<footer>\
+								<slot name='footer'></slot>\
+							</footer>\
+						</div>"
+			})
+			
+			
+			var app = new Vue({
+				el: "#app",
+				data: {},
+				methods: {},
+				watch: {},
+				computed: {},
+				components: {}
+			});
+			
+			
+		</script>
+	</body>
+</html>
